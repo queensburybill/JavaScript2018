@@ -5,13 +5,8 @@
  * @return {Boolean}
  */
 function isPalindrome(str) {
-  console.log(str);
-  let l = str.length - 1;
-  for (let i = 0; i < Math.floor(str.length/2); i++) {
-      if (str[i] !== str[l]) return false;
-      l--;
-  }
-  return true;
+  if (str === str.split("").reverse().join("")) return true;
+  else return false;
 }
 
 module.exports = {
