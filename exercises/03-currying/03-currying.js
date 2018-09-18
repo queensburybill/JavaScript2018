@@ -9,11 +9,20 @@
  *    specialMultiply(3,4); // 12
  *    specialMultiply(3)(4); // 12
  *    specialMultiply(3); // function(){}....
- *
+ * {}
  * @param {number} a
  * @param {number} b
  */
-function specialMultiply(a, b) {}
+function specialMultiply(a, b) {
+  if (!isNaN(b)) return a * b;
+  else return function(b) {
+    return a * b;
+  }
+}
+
+console.log(specialMultiply(3,4)); // 12
+console.log(specialMultiply(3)(4)); // 12
+console.log(specialMultiply(3));
 
 module.exports = {
   specialMultiply

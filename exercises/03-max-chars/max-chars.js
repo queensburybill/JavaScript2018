@@ -6,7 +6,19 @@
  * maxChar("aaaabc"); // a
  */
 
-function maxChars(string) {}
+function maxChars(string) {
+  let charOccurs = {};
+  for (let char of string.split("")) {
+    if (!charOccurs.char) {
+      charOccurs.char = 1;
+    } else charOccurs.char++
+  } 
+  let allChars = [];
+  for (char in charOccurs) { 
+    allChars.push(char); 
+  }
+  return allChars.reduce(a,b => a > b);
+}
 
 module.exports = {
   maxChars
