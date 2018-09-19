@@ -8,7 +8,7 @@ const {
   filter,
   onlyEvenValues,
   removeVowels
-} = require("../../exercises/03-filter/03-filter");
+} = require("../../exercises/04-filter/04-filter");
 
 describe("testing filter Array method", () => {
   let arrIndex = [];

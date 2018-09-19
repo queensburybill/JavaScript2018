@@ -1,3 +1,18 @@
+<!-- You will have to make use of closure to solve this problem.
+/ start the game by passing in the amount of tries a player can attempt the game.
+var game = guessingGame(5)
+game(1) // "You're too low!"
+game(8) // "You're too high!"
+game(5) // "You're too low!"
+game(7) // "You got it!"
+game(1) // "You are all done playing!"
+
+var game2 = guessingGame(3)
+game2(5) // "You're too low!"
+game2(3) // "You're too low!"
+game2(1) // "No more guesses the answer was 0"
+game2(1) // "You are all done playing!" -->
+
 <!DOCTYPE html>
 <html>
 
@@ -21,25 +36,38 @@
             /**
              * You can also work on this in real time with JSBin
              * @see https://jsbin.com/jokumurubo/1/edit?js,console,output
+             * 
+             * Create a game where the user most guess must guess the number.
+             * You will have to make use of closure to solve this problem.
+             * 
+             * @example
+             * var game = guessingGame(5)
+             * game(1) // "You're too low!"
+             * game(8) // "You're too high!"
+             * game(5) // "You're too low!"
+             * game(7) // "You got it!"
+             * game(1) // "You are all done playing!"
+             *  
+             * @example
+             *  var game2 = guessingGame(3)
+             *  game2(5) // "You're too low!"
+             *  game2(3) // "You're too low!"
+             *  game2(1) // "No more guesses the answer was 0"
+             *  game2(1) // "You are all done playing!"
+             * 
+             * @param {number} numberOfTries the number of guesses the user gets before they lose
              */
-
             function GuessingGame(numberOfTries) {
-                var answer = 3;
-                var attemptedTries = 0;
-                var result;
-
-                // return something here
             }
-            var guess = GuessingGame(3);
 
             var form = document.forms[0];
             var input = document.getElementById('guessInput')
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
                 var userInput = parseInt(input.value);
-                var response = guess(userInput);
-                console.log(response);
+                console.log(userInput)
             });
+
         })()
     </script>
 </body>

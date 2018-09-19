@@ -23,4 +23,3 @@ counterAPI.add(5);
 counterAPI.add(5);
 counterAPI.add(5);
 var newCounter = counterAPI.retrieve();
-console.log(newCounter);

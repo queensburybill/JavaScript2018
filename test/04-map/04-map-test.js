@@ -7,7 +7,7 @@ const {
   map,
   doubleValues,
   extractKey
-} = require("../../exercises/03-map/03-map");
+} = require("../../exercises/04-map/04-map");
 
 it("tests map to see if the function returns an array of modified values", () => {
   let suppliedArr;
