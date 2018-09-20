@@ -33,6 +33,6 @@ it("tests extractedName to see if the function returns a new array with the valu
     { name: "Tim" },
     { name: "Matt" },
     { name: "Colt" }
-  ]);
+  ], 'name');
   expect(extractedName).to.be.equalTo(["Elie", "Tim", "Matt", "Colt"]);
 });

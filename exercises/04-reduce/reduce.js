@@ -6,7 +6,9 @@
  *  addItems([1,5,6]) // 12
  *  addItems([1,-2,-3]) // -4
  */
-function addItems(arr) {}
+function addItems(arr) {
+  return arr.reduce((a,b) => a + b);
+}
 
 /**
  * Create a function that tallies the number of each kind of "thing" within the array
@@ -16,14 +18,24 @@ function addItems(arr) {}
  *   var fruits = ['Apple', 'Orange', 'Apple', 'Blueberry', 'Grape', 'Grape'];
  *   generateTally(generateTally); // {Apple: 2, Orange: 1, Blueberry: 1, Grape: 2}
  */
-function generateTally(array) {}
+function generateTally(array) {
+  return array.reduce((fruitBowl, fruit) => {
+    fruit in fruitBowl ? fruitBowl[fruit]++ : fruitBowl[fruit] = 1;
+    return fruitBowl;
+  }, {});
+}
 
 /**
  * Create a function that flattens an array (that is, it should "unnest" a nested array).
  * @param {array} arr e.g. `[[1, 3], [5, 10]]`
  * @returns {array} new, flattened array e.g. `[1, 3, 5, 10]`
  */
-function flattenArray(arr) {}
+function flattenArray(arr) {
+  return arr.reduce((newArr, innerArr) => {
+    for (n of innerArr) newArr.push(n);
+    return newArr;
+  });
+}
 
 /**
  * Create a function, that when given an array of object literals, will index the object literals by a single column
@@ -47,7 +59,12 @@ function flattenArray(arr) {}
  *   456: {id, 456, name: 'Rachel', age: 35}
  * }
  */
-function arrayToObject(arr) {}
+function arrayToObject(arr) {
+  return arr.reduce((peopleByID, person) => {
+    peopleByID[person.id] = person;
+    return peopleByID;
+  }, {});
+}
 
 module.exports = {
   addItems,

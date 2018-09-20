@@ -18,7 +18,9 @@ function map(arr, callback) {
  * @param {array} arr
  * @returns {array} new array, with each value doubled
  */
-function doubleValues(arr) {}
+function doubleValues(arr) {
+  return arr.map(a => a * 2);
+}
 
 /**
  * Given an array nested with objects
@@ -38,7 +40,9 @@ function doubleValues(arr) {}
  * ];
  * extractKey(arrayOfNames, 'name'); // ['Ellie', 'Tim', 'Matt', 'Colt']
  */
-function extractKey(arr, key) {}
+function extractKey(arr, key) {
+  return arr.map(person => person[key]);
+}
 
 module.exports = {
   map,
