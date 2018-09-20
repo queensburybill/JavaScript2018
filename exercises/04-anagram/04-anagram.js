@@ -14,7 +14,10 @@
  * @param {string} string2 second string to compare
  * @returns {boolean} whether or not the strings are anagrams
  */
-function anagrams() {}
+function anagrams(str1, str2) {
+  return str1.toLowerCase().split("").filter(char => (/[a-z]/).test(char)).sort().join("")
+     === str2.toLowerCase().split("").filter(char => (/[a-z]/).test(char)).sort().join("");
+}
 
 module.exports = {
   anagrams

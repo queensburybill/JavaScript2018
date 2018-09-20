@@ -4,8 +4,9 @@ const expect = chai.expect;
 chai.use(require("sinon-chai"));
 const { anagrams } = require("../../exercises/04-anagram/04-anagram");
 
-describe("anagrams", () => {
+describe.only("anagrams", () => {
   it('hello" is an anagram of "llohe', () => {
+    console.log(anagrams("hello", "llohe"));
     expect(anagrams("hello", "llohe")).to.equal(true);
   });
   it("care is an anagram of race", () => {
