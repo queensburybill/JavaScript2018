@@ -37,7 +37,7 @@ game2(1) // "You are all done playing!" -->
              * You can also work on this in real time with JSBin
              * @see https://jsbin.com/jokumurubo/1/edit?js,console,output
              * 
-             * Create a game where the user most guess must guess the number.
+             * Create a game where the user must guess the number.
              * You will have to make use of closure to solve this problem.
              * 
              * @example
@@ -57,37 +57,36 @@ game2(1) // "You are all done playing!" -->
              * 
              * @param {number} numberOfTries the number of guesses the user gets before they lose
              */
-            function GuessingGame(numberOfTries) {
-            // DON'T LOOK HERE!!!!!! 
-            /* 
-                const answer = 10 * Math.random();
-                    (function(numberOfTries) {
-                        for (let i = 0; i < numberOfTries; i++) {
-                            if ((numberOfTries-1 == i) && (userInput != answer)) {
-                                alert("No more guesses. The answer was " + answer + ".");
-                                break;
-                            }
-                            else if (userInput < answer) alert("You're too low!");
-                            else if (userInput > answer) alert("You're too high!");
-                            else {
-                                alert("You got it!");
-                                break;
-                            }
-                        }
-                        if (i == numberOfTries) {
-                            alert("You are all done playing!");
-                            break;
-                        }
-                    }(numberOfTries));
 
-            */
+            function GuessingGame(numberOfTries) {
+                var answer = Math.round(10 * Math.random());
+                var result;
+            
+                return function(guess) {
+                    if (numberOfTries <= 0) {
+                        result = "You are all done playing!";
+                    } else if ((numberOfTries == 1) && (guess != answer)) {
+                        result = "No more guesses. The answer was " + answer + ".";
+                    } else if (guess < answer) {
+                        result = "You're too low!";
+                    } else if (guess > answer) {
+                        result = "You're too high!";
+                    } else {
+                        result = "You got it!";
+                    }
+                    numberOfTries--;
+                    return result;
+                };
             }
+
+            var game = GuessingGame(3);
 
             var form = document.forms[0];
             var input = document.getElementById('guessInput')
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
                 var userInput = parseInt(input.value);
+                var response = game(userInput);
                 console.log(userInput)
             });
 
