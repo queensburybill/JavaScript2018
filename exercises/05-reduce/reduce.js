@@ -11,6 +11,18 @@ function addItems(arr) {
 }
 
 /**
+ * Create a function that flattens an array (that is, it should "unnest" a nested array).
+ * @param {array} arr e.g. `[[1, 3], [5, 10]]`
+ * @returns {array} new, flattened array e.g. `[1, 3, 5, 10]`
+ */
+function flattenArray(arr) {
+  return arr.reduce((newArr, innerArr) => {
+    for (n of innerArr) newArr.push(n);
+    return newArr;
+  });
+}
+
+/**
  * Create a function that tallies the number of each kind of "thing" within the array
  * @param {array} array e.g. `['Apple', 'Orange', 'Apple', 'Blueberry']`
  * @returns {object} where the thing name is the key and the tally is the value
@@ -25,17 +37,7 @@ function generateTally(array) {
   }, {});
 }
 
-/**
- * Create a function that flattens an array (that is, it should "unnest" a nested array).
- * @param {array} arr e.g. `[[1, 3], [5, 10]]`
- * @returns {array} new, flattened array e.g. `[1, 3, 5, 10]`
- */
-function flattenArray(arr) {
-  return arr.reduce((newArr, innerArr) => {
-    for (n of innerArr) newArr.push(n);
-    return newArr;
-  });
-}
+
 
 /**
  * Create a function, that when given an array of object literals, will index the object literals by a single column
