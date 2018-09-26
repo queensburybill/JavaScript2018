@@ -1,0 +1,109 @@
+[
+  {
+    "name": "Georgia Wagner",
+    "gender": "female",
+    "location": "Skookumchuck, VA",
+    "dobEpoch": 225799075,
+    "dob": "1977-02-26",
+    "username": "georgiawagner12",
+    "emails": ["georgiawagner12@nowhere.com", "gwagner@company.co"]
+  },
+  {
+    "name": "Meredith Holt",
+    "gender": "female",
+    "location": "Coltman, WV",
+    "dobEpoch": -387392229,
+    "dob": "1957-09-22",
+    "username": "meredithholt46",
+    "emails": ["meredithholt46@nowhere.com", "mholt@company.co"]
+  },
+  {
+    "name": "Cora Bradley",
+    "gender": "female",
+    "location": "Fairland, GA",
+    "dobEpoch": 806186055,
+    "dob": "1995-07-19",
+    "username": "corabradley58",
+    "emails": ["corabradley58@nowhere.com"]
+  },
+  {
+    "name": "Carol Scott",
+    "gender": "female",
+    "location": "Two Brooks, WI",
+    "dobEpoch": 114422696,
+    "dob": "1973-08-17",
+    "username": "carolscott92",
+    "emails": [
+      "cscott@company.co",
+      "carolscott92@nowhere.com",
+      "carolscott92@nowhere.net"
+    ]
+  },
+  {
+    "name": "Vincent Silva",
+    "gender": "male",
+    "location": "Brookhaven, DC",
+    "dobEpoch": -328945239,
+    "dob": "1959-07-30",
+    "username": "vincentsilva74",
+    "emails": ["vsilva@company.co"]
+  },
+  {
+    "name": "Clifton Armstrong",
+    "gender": "male",
+    "location": "Cimarron, WA",
+    "dobEpoch": 55771446,
+    "dob": "1971-10-08",
+    "username": "cliftonarmstrong38",
+    "emails": []
+  },
+  {
+    "name": "Deanna Stanley",
+    "gender": "female",
+    "location": "Morgan Mill, OK",
+    "dobEpoch": 40997049,
+    "dob": "1971-04-20",
+    "username": "deannastanley94",
+    "emails": ["deannastanley94@nowhere.com", "dstanley@company.co"]
+  },
+  {
+    "name": "Sidney Walker",
+    "gender": "male",
+    "location": "Scottsville, KS",
+    "dobEpoch": 536804114,
+    "dob": "1987-01-05",
+    "username": "sidneywalker91",
+    "emails": [
+      "sidneywalker91@nowhere.com",
+      "swalker@company.co",
+      "swalker2019@college.edu"
+    ]
+  },
+  {
+    "name": "Guillermo Gross",
+    "gender": "male",
+    "location": "Del Rey Oaks, RI",
+    "dobEpoch": 896601085,
+    "dob": "1998-05-31",
+    "username": "guillermogross18",
+    "emails": []
+  },
+  {
+    "name": "Daniel Steele",
+    "gender": "male",
+    "location": "Martins Corner, TX",
+    "dobEpoch": -204544060,
+    "dob": "1963-07-09",
+    "username": "danielsteele56",
+    "emails": ["danielsteele56@nowhere.com"]
+  },
+  {
+    "name": "Brett Jimenez",
+    "gender": "male",
+    "location": "East Waterford, ME",
+    "dobEpoch": -367836824,
+    "dob": "1958-05-06",
+    "username": "brettjimenez2",
+    "emails": ["bjimenez@company.co", "brettjimenez2@nowhere.com"]
+  }
+]
