@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <link rel="stylesheet" href="styles.css?v=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row text-center" id="body">
+      <h1 id="title-head">Rick Sanchez</h1>
+      <div id="main-img">
+        <a href="http://rickandmorty.wikia.com/wiki/Rick_Sanchez">
+          <img class="img-rounded" alt="Get Schwifty" id="get-schwifty" src="https://i.ytimg.com/vi/UFFi9PWKDjg/maxresdefault.jpg"
+          />
+        </a>
+        <p id="photo-caption">
+          <em>Rick and his homies, gettin' schwifty.</em>
+        </p>
+        <div class="linkfooter">
+          <p>Select your favorite character</p>
+          <select id="dropdown" type="text">
+            <option>Select a character</option>
+          </select>
+
+        </div>
+      </div>
+    </div>
+</body>
+<script src="script.js"></script>
+<script>
+  (function () {
+    populateDropDown()
+  })()
+</script>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>e.currentTarget Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <style>
+        i:hover {
+    background-color: rgb(80, 252, 0);
+  }
+  </style>
+</head>
+
+<body>
+    <button type="button" class="btn btn-lg" name="action" value="cancel">
+        <i class="fa fa-times"></i> Cancel
+    </button>
+    <button type="button" class="btn btn-primary btn-lg" name="action" value="save">
+        <i class="fa fa-save"></i> Save
+    </button>
+    <pre id="output" class="mt-2 pr-2 mb-2 pl-2"></pre>
+    <script>
+        (function () {
+            /**
+             * JSBin @see https://jsbin.com/siduqit/1/edit?html,js,output and be sure to click "Run with JS"
+             */
+            var output = document.getElementById('output');
+            document.querySelectorAll('button').forEach(function (button) {
+                button.addEventListener('click', function (e) {
+                    var message = '';
+                    // message += 'The event is attached to the ' + e.currentTarget.tagName + ' (e.currentTarget)\n';
+                    message += 'The ' + e.target.tagName + ' triggered the event (e.target)\n';
+                    message += 'The value of the element that triggered the event is "' + e.target.value + '"';
+                    output.textContent = message;
+                });
+            });
+        })();
+    </script>
+</body>
+
+</html>

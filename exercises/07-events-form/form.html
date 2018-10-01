@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Form Events Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="success.html" class="container mt-4" id="form" novalidate>
+        <div class="form-group">
+            <label for="codeName">Code Name</label>
+            <input type="text" name="codeName" id="codeName" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="rank">Rank</label>
+            <select name="rank" id="rank" class="form-control" required>
+                <option value=""></option>
+                <option value="Consultant">Consultant</option>
+                <option value="Scout">Scout</option>
+                <option value="Investigator">Investigator</option>
+                <option value="Operative">Operative</option>
+                <option value="Agent">Agent</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="experience">Years of Experience</label>
+            <input type="number" name="experience" id="experience" class="form-control" min="0" max="100">
+        </div>
+        <div id="error" class="alert alert-danger hidden" role="alert">
+
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <script src="form.js"></script>
+</body>
+
+</html>

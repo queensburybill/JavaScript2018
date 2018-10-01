@@ -1,0 +1,33 @@
+<style>
+  img {
+    height: 200px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button {
+    margin: 20px;
+  }
+</style>
+
+<div class="container">
+  <img src="https://i.kym-cdn.com/photos/images/original/001/293/153/4b8.png" size="50" height="50" />
+  <p id="bitcoin">Get Price </p>
+  <button id="btn">Get Price</button>
+</div>
+
+
+<script>
+  btn.addEventListener("click", () => {
+    const XHR = new XMLHttpRequest();
+    XHR.open("GET", "https://api.coindesk.com/v1/bpi/currentprice.json");
+    XHR.send();
+    XHR.onreadystatechange = function () {
+    };
+  });
+
+</script>

@@ -29,8 +29,9 @@ const doubleOddNumbers = arr => arr.filter(val => val % 2 !== 0).map(val => val 
 /**
  * Refactor the following to use ES6 arrow syntax and let declarations.
  * Make sure your refactored function is still called "sayNameLaterObj".
+ * When `sayNameLaterObj.sayLater()` is called on, it should print "Jamal"
  * Sorry, this does not have a unit test. For JSBin,
- * @see https://jsbin.com/noluxolixe/1/edit?js,console
+ * @see https://jsbin.com/teroruyege/2/edit?js,console
  */
 var sayNameLaterObj = {
   name: "Jamal",
