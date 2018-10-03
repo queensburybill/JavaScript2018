@@ -4,12 +4,13 @@
  * 2.) Remove the jewel from the page
  */
 
-function removeJewel() {
-    document.getElementByID("counter").innerHTML++;
+let el = document.getElementsByTagName('IMG');
+let counter = 0;
 
-    let j = document.getElementByID(e)
-    j.style.display = "none";
- }
+for(let i = 0; i < el.length; i++){
+    el[i].addEventListener("click", () => {
+        el[i].style.display = "none";
+        document.getElementById("counter").innerHTML = ++counter;
+    });
+}
 
-var el = document.getElementById("outside");
-el.addEventListener("click", removeJewel());

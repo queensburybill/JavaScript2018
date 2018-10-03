@@ -33,9 +33,9 @@ const doubleOddNumbers = arr => arr.filter(val => val % 2 !== 0).map(val => val 
  * Sorry, this does not have a unit test. For JSBin,
  * @see https://jsbin.com/teroruyege/2/edit?js,console
  */
-var sayNameLaterObj = {
+let sayNameLaterObj = {
   name: "Jamal",
-  sayLater: () => {
+  sayLater() {
     setTimeout(() => console.log(this.name), 1000);
   }
 };
