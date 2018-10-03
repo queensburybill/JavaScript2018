@@ -4,7 +4,10 @@
  * @param {array} arr2
  * @returns {array} new array of unique values
  */
-function diffArray(arr1, arr2) {}
+function diffArray(arr1, arr2) {
+  let testArr = arr1.concat(arr2);
+  return testArr.filter(x => testArr.lastIndexOf(x) === testArr.indexOf(x));
+}
 
 module.exports = {
   diffArray
