@@ -42,7 +42,7 @@ Examples:
  *  removeVowels('ZZZZZZ') // ('zzzzzz')
  */
 function removeVowels(str) {
-  return str.split("").filter(char => !(char === /[aeiou]/).join("");
+  return str.split("").filter(char => !(char === /[aeiou]/).join(""));
 }
 
 module.exports = {

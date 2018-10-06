@@ -15,8 +15,15 @@
  */
 function loadAllCharacters(callback) {
   var XHR = new XMLHttpRequest();
+  XHR.open("GET", "https://rickandmortyapi.com/api/character");
+  XHR.send();
 
-  XHR.onreadystatechange = function() {};
+  XHR.onreadystatechange = function() {
+    if(XHR.readyState === 4  && XHR.status === 200){
+      console.log('hey!');
+      callback(JSON.parse(XHR.responseText));
+    };
+  }
 }
 
 function populateDropDown(data) {
@@ -25,7 +32,9 @@ function populateDropDown(data) {
     $('#dropdown').append(
       $('<option></option>')
         .val(p.name)
-        .html(p.name)
+        .html(p.name + ": " + p.status)
     );
   });
 }
+
+loadAllCharacters(populateDropDown);
