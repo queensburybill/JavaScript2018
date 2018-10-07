@@ -16,19 +16,19 @@
  *
  */
 
+let el = document.getElementById('button');
+
 const loadImage = url => {
+  url = 'https://dog.ceo/api/breeds/image/random'
   fetch(url)
     .then(response => {
-      //console.log(response.json());
-      /*
       if (!response.ok) {
-        throw new Error('The server screwed the pooch!');
-      }*/
+        throw new Error('The server is in the doghouse!');
+      }
      return response.json();
     })
     .then(img => {
-      console.log("hey");
-      return renderImageToPage(img);
+      return renderImageToPage(img.message);
     });
 }
 
@@ -37,4 +37,4 @@ const renderImageToPage = src => {
   $("#image").prop("src", src);
 };
 
-loadImage('https://dog.ceo/api/breeds/image/random');
+el.addEventListener("click", loadImage);
