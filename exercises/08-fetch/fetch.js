@@ -18,9 +18,8 @@
 
 let el = document.getElementById('button');
 
-const loadImage = url => {
-  url = 'https://dog.ceo/api/breeds/image/random'
-  fetch(url)
+function loadImage() {
+  fetch('https://dog.ceo/api/breeds/image/random')
     .then(response => {
       if (!response.ok) {
         throw new Error('The server is in the doghouse!');
