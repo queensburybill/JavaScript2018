@@ -1,0 +1,55 @@
+{
+  "Antipasto": [
+    {
+      "name": "Bruschetta",
+      "description": "Toasted baguette with marinated sweet peppers, fresh roma tomatoes, basil, olive oil, and a balamic glaze",
+      "price": 8
+    },
+    {
+      "name": "Baked Oysters",
+      "description": "Fresh Emerald Cove oysters baked with butter and garlic",
+      "price": 8
+    }
+  ],
+  "Salads": [
+    {
+      "name": "House Salad",
+      "description": "Organic greens, crumbled gorgonzola, Cerignola olives, house dressing",
+      "price": 5
+    },
+    {
+      "name": "Caprese Salad",
+      "description": "Heirloom tomatoes, fresh mozzarella, fresh basil, balsamic vinaigrette",
+      "price": 7
+    }
+  ],
+  "Pasta": [
+    {
+      "name": "Spaghetti Puttanesca",
+      "description": "Tomatoes, green olives, capers, peperonicini, chilli,, oregano",
+      "price": 11
+    },
+    {
+      "name": "Risotto Gamberi",
+      "description": "Arbaria rice, shrimp, asparagus, creamy tomato sauce",
+      "price": 12
+    },
+    {
+      "name": "Gnocchi",
+      "description": "Potato pasta, sage, browned butter, fontina, gorgonzola",
+      "price": 10.0
+    }
+  ],
+  "Panini": [
+    {
+      "name": "Chicken or Eggplant Parmigiana",
+      "description": "Grilled chicken breast, parmesan, mozzarella, marinara",
+      "price": 10.0
+    },
+    {
+      "name": "Umbria Turkey",
+      "description": "Turkey breast, avocado, tomato, organic spring mix",
+      "price": 8.0
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "id": 145,
+    "startDate": "2018-09-15 07:10:05",
+    "activity": "Running",
+    "miles": 3.1,
+    "time": "29:35"
+  },
+  {
+    "id": 146,
+    "startDate": "2018-09-17 07:05:32",
+    "activity": "Treadmill",
+    "miles": 2.5,
+    "time": "24:04"
+  },
+  {
+    "id": 147,
+    "startDate": "2018-09-20 17:31:45",
+    "activity": "Cycling",
+    "miles": 12.6,
+    "time": "57:42"
+  },
+  {
+    "id": 148,
+    "startDate": "2018-09-21 07:11:55",
+    "activity": "Running",
+    "miles": 3.1,
+    "time": "29:37"
+  },
+  {
+    "id": 149,
+    "startDate": "2018-09-23 13:45:59",
+    "activity": "Hiking",
+    "miles": 4.5,
+    "time": "01:30:15"
+  }
+]

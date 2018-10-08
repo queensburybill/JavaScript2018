@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css?family=Alice|Playfair+Display:700");
+
+html,
+body {
+  font: 100%/1.5 "Alice", serif;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+  font-weight: normal;
+}
+h1 {
+  border-bottom: 1px rgb(0, 0, 0, 15%) solid;
+}
+.RestaurantMenu {
+  max-width: 640px;
+  margin: auto;
+}
+.MenuItem-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.MenuItem h3 {
+  margin: 0;
+}
+.MenuItem p {
+  margin-top: 0;
+}
