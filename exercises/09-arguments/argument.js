@@ -9,7 +9,9 @@
  *
  */
 
-function destroyer(arr) {}
+function destroyer(arr, ...args) {
+  return arr.filter(el => !args.includes(el))
+}
 
 module.exports = {
   destroyer
