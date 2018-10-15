@@ -31,7 +31,7 @@ import jewelGreen from "./jewel-green.svg";
 /**
  * @constant {array} an array of nested object, with each object representing a single jewel
  * @see https://stackoverflow.com/questions/3895478/does-javascript-have-a-method-like-range-to-generate-a-range-within-the-supp
- * Hint: one approach is to set this as initial state
+ * Hint: one approach is to set this as part of the initial state
  * YOU CAN ALTER THIS to take any shape that you want
  */
 const jewels = [...Array(35).keys()].map(num => {

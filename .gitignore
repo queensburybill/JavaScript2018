@@ -74,3 +74,4 @@ Thumbs.db
 
 # misc
 package-lock.json
+yarn.lock

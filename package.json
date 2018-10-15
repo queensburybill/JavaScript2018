@@ -10,11 +10,24 @@
     "type": "git",
     "url": "git+https://github.com/AlbanyCanCodeCourses/JavaScript2018.git"
   },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
   "author": "AlbanyCanCode",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "chai": "^4.1.2",
     "chai-arrays": "^2.0.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
     "mocha": "^5.2.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.3.2",
     "sinon": "^6.1.0",
     "sinon-chai": "^3.2.0"
   },
