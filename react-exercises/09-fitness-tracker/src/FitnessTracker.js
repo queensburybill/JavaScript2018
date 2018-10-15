@@ -21,33 +21,39 @@ import "./FitnessTracker.css";
 import activities from "./FitnessTrackerActivities.json";
 
 function FitnessActivity(props) {
-  const { id, startDate, activity, miles, time } = activities;
   return (
     <div className="FitnessActivity">
-      <p className="FitnessActivity-startDate">
+      <div className="FitnessActivity-startDate">
         {props.startDate}
-      </p>
-      <p className="FitnessActivity-activity">
+      </div>
+      <div className="FitnessActivity-activity">
         {props.activity}
-      </p>
+      </div>
+      <div className="FitnessActivity-miles">
+        {props.miles}
+      </div>
+      <div className="FitnessActivity-time">
+        {props.time}
+      </div>
     </div>
   )
 }
 
 function FitnessTracker() {
-  <main className="FitnessTracker">
-    <div>
-      {Object.values(activities).map((action, i) => {
+  return (
+    <main className="FitnessTracker">
+      {Object.values(activities).map(action => {
         return <FitnessActivity
+          key={action.id}
           startDate={action.startDate}
           activity={action.activity}
           miles={action.miles}
           time={action.time}
         />;
       })}
-    </div>
-    
-  </main>
+    </main>
+  )
 }
 
 export default FitnessTracker;
+
