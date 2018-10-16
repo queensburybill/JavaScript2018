@@ -77,7 +77,7 @@ class JewelGame extends Component {
   render() {
     return (
       <main className="JewelGame">
-        <Counter count={this.count}/>
+        <Counter count={this.state.count}/>
         {jewels.map((jewel, index) => {
           const key = "jewel-" + index;
           return jewel.isVisible ? (
