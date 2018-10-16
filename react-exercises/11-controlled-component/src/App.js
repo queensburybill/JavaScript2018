@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Forms from './components/Forms/Forms';
 
 /***
  *    1) Use defaultProps to set the intital state of the Application.
@@ -20,15 +21,37 @@ class App extends Component {
     userInput: ''
   };
 
-  handleSubmission = () => {};
+  handleOnChange = (e) => {
+    const {casing} = this.props;
+    this.setState({
+      userInput: casing === 'lowercase' ?
+      e.target.value.toLowerCase() :
+      e.target.value.toUpperCase()
+    })
+  };
 
-  handleOnChange = () => {};
+  handleSubmission = (e) => {
+    e.preventDefault();
+    this.setState({
+     userInput: e.target.value
+    })
+  };
 
   render() {
-    return <div className="App">{this.state.userInput}</div>;
+    return (
+      <div className="App">
+        <Forms 
+          onChange={e => this.handleOnChange(e)}
+          onSubmit={e => this.handleSubmission(e)}
+          value={this.state.userInput}
+        />
+      </div>
+    )
   }
 }
 
-App.defaultProps = {};
+App.defaultProps = {
+  casing: 'lowercase'
+};
 
 export default App;

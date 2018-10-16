@@ -11,15 +11,24 @@ class App extends Component {
     showText: true
   };
 
-  toggleVisibility = () => {};
+  toggleVisibility = () => {
+    this.setState({
+      showText: !this.state.showText
+    })
+  };
 
   render() {
     return (
       <div>
         <div>
-          <h1>Now you see me!</h1>
+          { this.state.showText && <h1>Now you see me!</h1> }
         </div>
-        <button>Click To Hide Text</button>
+        <button 
+          type="button"
+          onClick={this.toggleVisibility}
+          >
+          Click To Hide Text
+        </button>
       </div>
     );
   }
