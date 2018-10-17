@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Forms from './components/Forms/Forms';
 
 /***
+ * I REMOVED THIS ASPECT OF THE CHALLENGE SO I COULD FOCUS ON BUILDING A FORM
+ * 
  *    1) Use defaultProps to set the intital state of the Application.
  *       defaultProps should have a property called casing and value of UpperCase or LowerCase to determine the state
  *       of userInput. For example, setting defaultProps to LowerCase results in the user's input to be lower case.
@@ -18,40 +20,41 @@ import Forms from './components/Forms/Forms';
 
 class App extends Component {
   state = {
-    userInput: ''
+    name: '',
+    email: '',
+    message: ''
   };
 
-  handleOnChange = (e) => {
-    const {casing} = this.props;
+  handleOnChange = (e, key) => {
     this.setState({
-      userInput: casing === 'lowercase' ?
-      e.target.value.toLowerCase() :
-      e.target.value.toUpperCase()
-    })
+      [key]: e.target.value
+    });
   };
 
-  handleSubmission = (e) => {
-    e.preventDefault();
-    this.setState({
-     userInput: e.target.value
-    })
+  handleSubmission = (e, keys) => {
+    // Is there a reason we wanted to prevent submission? I turned that off...
+    // e.preventDefault();
+    keys.forEach((key) => {
+      this.setState({
+        [key]: e.target.value
+      });
+    });
+    alert("You've successfully submitted!");
   };
 
   render() {
     return (
       <div className="App">
         <Forms 
-          onChange={e => this.handleOnChange(e)}
-          onSubmit={e => this.handleSubmission(e)}
-          value={this.state.userInput}
+          onChange={this.handleOnChange}
+          onSubmit={this.handleSubmission}
+          name={this.state.name}
+          email={this.state.email}
+          message={this.state.message}
         />
       </div>
     )
   }
 }
-
-App.defaultProps = {
-  casing: 'lowercase'
-};
 
 export default App;

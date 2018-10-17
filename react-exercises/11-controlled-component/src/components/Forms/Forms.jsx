@@ -1,21 +1,41 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import './Forms.css'
 
 class Forms extends Component {
   render() {
-    console.log(this.state);
     return (
       <div>
-        <form>
-          <textarea 
-            type="text"
-            onChange={this.props.onChange}
-            value={this.props.value}
-          />
-          <button 
-            type="submit"
-            onSubmit={this.props.onSubmit}
-          >Click Me</button>
+        <form onSubmit={e => this.props.onSubmit(e, ["name", "email", "message"])}>
+          <div>
+            <label htmlFor="name">Name:</label>
+            <input
+              id="name"
+              type="text"
+              name="name"
+              onChange={e => this.props.onChange(e, "name")}
+              message={this.props.message}
+            />
+          </div>
+          <div>
+            <label htmlFor="email">Email:</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              onChange={e => this.props.onChange(e, "email")}
+              message={this.props.message}
+            />
+          </div>
+          <div>
+            <label htmlFor="name">Message:</label>
+            <textarea 
+              id="message"
+              type="text"
+              onChange={e => this.props.onChange(e, "message")}
+              message={this.props.message}
+            />
+          </div>
+            <button type="submit">Submit</button>
         </form>
       </div>
     );

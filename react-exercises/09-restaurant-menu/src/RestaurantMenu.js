@@ -23,10 +23,29 @@
 </main>
  */
 
-// import the things you need here
+import React from "react";
+import "./RestaurantMenu.css"
+import menuItemsJSON from "./RestaurantMenuItems.json"
+
+const sections = Object.entries(menuItemsJSON);
 
 // create any additional React components here
+function MenuSections() {
+  return (
+    sections.map(section => {
 
-function RestaurantMenu() {}
+    })
+  );
+}
 
-// export the function "RestaurantMenu" here as the default
+function RestaurantMenu() {
+  return (
+    <main className="RestaurantMenu">
+      <h1>Grandezza Del Cibo</h1>
+
+      <MenuSections />
+    </main>
+  );
+}
+
+export default RestaurantMenu

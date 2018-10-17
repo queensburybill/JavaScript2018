@@ -41,7 +41,6 @@ const jewels = [...Array(35).keys()].map(num => {
   };
 });
 
-let count;
 
 // Hint: you can pass down more properties to Jewel
 function Jewel(props) {
@@ -54,6 +53,7 @@ function Jewel(props) {
       height="128"
       tabIndex="-1"
       role="button"
+      onClick={props.onClick}
     />
   );
 }
@@ -69,15 +69,16 @@ class JewelGame extends Component {
     count: 0
   }
   hideJewel = index => {
-    let newState = Object.assign(this.state);
-    newState[index].isVisible = false;
-    newState.count++;
-    this.setState(newState);
+    this.setState({
+      jewels: jewels[index].isVisible = false,
+      count: this.state.count + 1
+    });
   };
   render() {
     return (
       <main className="JewelGame">
         <Counter count={this.state.count}/>
+
         {jewels.map((jewel, index) => {
           const key = "jewel-" + index;
           return jewel.isVisible ? (
