@@ -34,6 +34,8 @@ Follow the guide [Creating a pull request from a fork](https://help.github.com/a
 
 ## Resources:
 
-Our class syllabus https://docs.google.com/document/d/1MSUpw2dkVQRboYcomshuBCort_xVjVpiYLu9vfK49pU/edit
+[Class Syllabus](https://docs.google.com/document/d/1MSUpw2dkVQRboYcomshuBCort_xVjVpiYLu9vfK49pU/edit)
 
-Slides are available at https://slides.com/jamaltaylor
+[Slides](https://slides.com/jamaltaylor)
+
+[Project 1 - Retro Board](https://docs.google.com/document/d/1ZWnjgvoGg9cIdpnBzFFI4JUGt8ckydu1hCA3wjORirk/edit?usp=sharing)
