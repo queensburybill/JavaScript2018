@@ -68,24 +68,26 @@ class JewelGame extends Component {
     jewels: jewels,
     count: 0
   }
-  hideJewel = index => {
-    this.setState({
-      jewels: jewels[index].isVisible = false,
-      count: this.state.count + 1
-    });
+  hideJewel = (jewel) => {
+    let newJewels = Object.assign()
+      this.setState({
+        count: this.state.count + 1
+      })
+      jewel.isVisible = false;
   };
   render() {
+    console.log(this.foo);
     return (
       <main className="JewelGame">
         <Counter count={this.state.count}/>
 
-        {jewels.map((jewel, index) => {
+        {this.state.jewels.map((jewel, index) => {
           const key = "jewel-" + index;
           return jewel.isVisible ? (
             <Jewel
               image={jewel.image}
               key={key}
-              onClick={() => this.hideJewel(index)}
+              onClick={() => this.hideJewel(jewel)}
               />
             ) : null;
         })}
