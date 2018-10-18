@@ -66,20 +66,21 @@ function Counter(props) {
 class JewelGame extends Component {
   state = {
     jewels: jewels,
-    count: 0
   }
-  hideJewel = (jewel) => {
-    let newJewels = Object.assign()
+  count = 0;
+
+  hideJewel = index => {
+    ++this.count;
+    let newJewels = this.state.jewels;
+    newJewels[index].isVisible = false;
       this.setState({
-        count: this.state.count + 1
+        jewels: newJewels,
       })
-      jewel.isVisible = false;
   };
   render() {
-    console.log(this.foo);
     return (
       <main className="JewelGame">
-        <Counter count={this.state.count}/>
+        <Counter count={this.count}/>
 
         {this.state.jewels.map((jewel, index) => {
           const key = "jewel-" + index;
@@ -87,7 +88,7 @@ class JewelGame extends Component {
             <Jewel
               image={jewel.image}
               key={key}
-              onClick={() => this.hideJewel(jewel)}
+              onClick={() => this.hideJewel(index)}
               />
             ) : null;
         })}
