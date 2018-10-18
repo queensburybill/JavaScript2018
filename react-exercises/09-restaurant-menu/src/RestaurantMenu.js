@@ -25,16 +25,37 @@
 
 import React from "react";
 import "./RestaurantMenu.css"
-import menuItemsJSON from "./RestaurantMenuItems.json"
+import menuItemsData from "./RestaurantMenuItems.json"
 
-const sections = Object.entries(menuItemsJSON);
+const sections = Object.entries(menuItemsData);
 
 // create any additional React components here
-function MenuSections() {
-  return (
-    sections.map(section => {
 
-    })
+function MenuDishes(props) {
+  return (
+      <div className="MenuItem">
+        <div className="MenuItem-row">
+          <h3>{props.name}</h3>
+          <div>{`$${Math.floor(props.price)}.00`}</div>
+        </div>
+        <p>{props.description}</p>
+      </div>
+  )
+}
+
+function MenuSections(props) {
+  return (
+    <div>
+      <h2>{props.heading}</h2>
+      {props.dishes.map((dish, i) => {
+        return <MenuDishes 
+          name={dish.name}
+          price={dish.price}
+          description={dish.description}
+          key={`dish- ${i}`}
+        />
+      })}
+    </div>
   );
 }
 
@@ -42,8 +63,13 @@ function RestaurantMenu() {
   return (
     <main className="RestaurantMenu">
       <h1>Grandezza Del Cibo</h1>
-
-      <MenuSections />
+      {sections.map((section, i) => {
+        return <MenuSections 
+          heading={section[0]}
+          dishes={section[1]}
+          key={`section- ${i}`}
+          />
+      })}
     </main>
   );
 }
