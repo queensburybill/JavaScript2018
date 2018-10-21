@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #efefef;
+}
+.UserDirectory {
+  max-width: 420px;
+  margin: auto;
+  position: relative;
+}
+.Search {
+  position: fixed;
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem 0 0.5rem;
+  background-color: #efefef;
+}
+.search {
+  background: white url("./search.png") top 0.625rem right 0.625rem no-repeat;
+  box-shadow: 0 0 3.125rem rgba(0, 0, 0, 0.18);
+}
+.UserDirectory-users {
+  padding-top: 95px;
+}
+.card {
+  margin-bottom: 0;
+}
+.thumbnail {
+  box-shadow: none;
+  margin-bottom: 0;
+}
+.thumbnail > img {
+  border-radius: 50%;
+  border: 3px #ffc107 solid;
+}

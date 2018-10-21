@@ -1,10 +1,10 @@
-/**
+/** An Example of the response you will receive when making an Http request
  * https://dog.ceo/api/breeds/image/random
  *
  * {
     "status": "success",
     "message": "https://images.dog.ceo/breeds/poodle-toy/n02113624_9550.jpg"
-}
+    }
  *
  * 
  * 
@@ -17,21 +17,28 @@
  */
 
 const loadImage = url => {
-  return new Promise((resolve, reject) => {
-    fetch(url).then(response => {
-      if (response.ok) {
-        resolve(response.json());
-      } else {
-        reject('did not work');
-      }
+  fetch(url)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      renderImageToPage(data.message);
+    })
+    .catch(function(error) {
+      renderImageToPage(
+        "https://www.123rf.com/photo_44185374_404-error-page-not-found-concept-and-a-broken-or-dead-link-symbol-as-a-dog-emerging-from-a-hole-hold.html"
+      );
     });
-  });
-};
-const createImage = data => {
-  console.log(data.message);
 };
 
-/** Do not edit this code  */
+/** This function should render an image to the page */
+const renderImageToPage = src => {
+  $("#image").prop("src", src);
+};
 
-var image = loadImage('https://dog.ceo/api/breeds/image/random');
-image.then(data => console.log(data));
+renderImageToPage();
+
+document.addEventListener(
+  "click",
+  loadImage.bind(null, "https://dog.ceo/api/breeds/image/random")
+);

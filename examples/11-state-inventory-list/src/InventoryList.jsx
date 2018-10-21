@@ -34,9 +34,9 @@ function InventoryCategory(props) {
             const labelId = "change-category-" + product.id;
             if (product.category === props.category) {
               return (
-                <tr key={key}>
-                  <td>{product.name}</td>
-                  <td className="form-inline">
+                <div className="row" key={key}>
+                  <div className="col">{product.name}</div>
+                  <div className="col form-inline">
                     <label className="mr-2" htmlFor={labelId}>
                       Change Category
                     </label>
@@ -50,8 +50,8 @@ function InventoryCategory(props) {
                       <option value="clothing">Clothing</option>
                       <option value="toys">Toys</option>
                     </select>
-                  </td>
-                  <td>
+                  </div>
+                  <div className="col-1">
                     <button
                       type="button"
                       className="btn btn-danger btn-sm"
@@ -59,8 +59,8 @@ function InventoryCategory(props) {
                     >
                       Delete
                     </button>
-                  </td>
-                </tr>
+                  </div>
+                </div>
               );
             } else return null;
           })}
