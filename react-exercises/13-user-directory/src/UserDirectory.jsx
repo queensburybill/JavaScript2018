@@ -3,6 +3,8 @@ import "./UserDirectory.css";
 import users from "./users";
 
 /**
+ * PART I: To be completed at the beginning of class
+ *
  * Using events and state with React, get the search bar to work. The search bar should
  * search by first name, last name, and first name and last name together.
  * The search bar should be case insensitive. For a demo,
@@ -61,5 +63,17 @@ class UserDirectory extends Component {
     );
   }
 }
+
+/**
+ * PART II - to be completed later in class
+ *
+ * Update the component to use AJAX and lifecycle hooks.
+ * You will need to install and import the Axios library. From the "react-exercises/13-user-directory" folder, run
+ * ```
+ * npm install --save axios
+ * ```
+ * You will be using the Random User API. Use this URL:
+ * https://randomuser.me/api?results=500&inc=name,email,picture
+ */
 
 export default UserDirectory;
