@@ -78,6 +78,7 @@ class JewelGame extends Component {
       })
   };
   render() {
+    console.log(this);
     return (
       <main className="JewelGame">
         <Counter count={this.count}/>
