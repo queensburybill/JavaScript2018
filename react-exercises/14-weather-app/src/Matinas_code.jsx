@@ -26,7 +26,10 @@ class App extends Component {
       if (!response.data.lat || !response.data.lon)
         throw new Error("No response from lat + long");
       callback(response.data.lat, response.data.lon);
-      this.setState({ location: response.data.location });
+      this.setState({ 
+        location: response.data.location,
+        isLoading: false 
+      });
     });
   };
   getWeather = (lat, long) => {
@@ -34,11 +37,9 @@ class App extends Component {
       .get(`http://dev.mydbc.co/demo/api.php?lat=${lat}&long=${long}`)
       .then(response => {
         const { temperature, summary } = response.data.currently;
-        console.log(response.data);
         this.setState({
           temperature,
           summary,
-          isLoading: false
         });
       });
   };

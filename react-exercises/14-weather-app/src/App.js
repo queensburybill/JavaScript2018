@@ -17,93 +17,71 @@ import axios from "axios";
 
 class App extends Component {
   state = {
-    lat: "",
-    long: "",
-    // location: ["42.9694", "-74.1224"],
-    weather: null,
-    loading: false,
+    location: "",
+    weather: {},
+    loading: true,
     isError: false
   }
 
-  // getWeather = (location) => {
-  //   this.setState({
-  //     loading: true
-  //   });
-  //   axios
-  //     .get('http://dev.mydbc.co/demo/api.php?lat=' + this.state.location[0] + '&long=' + this.state.location[1])
-  //     .then(response => {
-  //       console.log(response.data.currently);
-  //       this.setState({
-  //         loading: false
-  //       });
-  //       return response.data.currently;
-  //     })
-  //     .catch(error => {
-  //       this.setState({
-  //         isError: true
-  //       });
-  //     });
-  // }
-
-  getLocation = () => {
-    this.setState({
-      loading: true
-    });
+  getLocation = (callback) => {
+    this.setState({ loading: true });
     axios
       .get('http://dev.mydbc.co/demo/latlong.php')
       .then(response => {
-        console.log(response.data);
+        if(!response.data.lat || !response.data.lon)
+          throw new Error("No response from lat * long");
+        callback(response.data.lat, response.data.lon);
         this.setState({
-          lat: response.data.lat,
-          long: response.data.long
+          location: response.data.location,
+          loading: false  
         });
       })
-      .catch(error => {
-        this.setState({
-          isError: true
-        });
-      })
-      // .get('http://dev.mydbc.co/demo/api.php?lat=' + this.state.lat + '&long=' + this.state.long)
-      .get('http://dev.mydbc.co/demo/api.php?lat=42.9694&long=-74.1224')
+    .catch(() => {
+      this.setState({ isError: true });
+    });
+  }
+
+  getWeather = (lat, lon) => {
+    this.setState({ loading: true });
+    axios
+      .get(`http://dev.mydbc.co/demo/api.php?lat=${lat}&long=${lon}`)
       .then(response => {
-        console.log(response.data.currently);
-        this.setState({
-          weather: response.data.currently,
-          loading: false
+        this.setState({  
+          weather: response.data.currently
         });
       })
-      .catch(error => {
-        this.setState({
-          isError: true
-        });
+      .catch(() => {
+        this.setState({ isError: true });
       });
   }
 
   componentDidMount = () => {
-    this.getWeather(() => this.getLocation());
+    this.getLocation(this.getWeather);
   }
 
 
   render() {
-    console.log(this.state.lat);
     return (
       <div className="card">
         <div className="card-section">
-            {this.state.loading ? ( 
-              <div className="container">
-                <h2>Loading</h2>
-              </div>) : (
-              <div className="container">
-                <h3>New York, NY</h3>
-                <p>
-                  {this.state.weather.summary}
-                  <br />
-                  {this.state.weather.temperature + "&deg;F"}
-                </p>
-              </div>
-              )
-            }
-          </div>
+          {this.state.loading  
+            ? ( 
+            <div className="container">
+              <h2>Loading</h2>
+            </div> 
+            )
+            : (
+            <div className="container">
+              <h3>{this.state.location}</h3>
+              <p>
+                {this.state.weather.summary}
+                <br />
+                Temperature: {Math.round(this.state.weather.temperature)}&deg;F
+              </p>
+            </div> 
+            )
+          }
+        </div>
       </div>
     );
   }
