@@ -71,6 +71,7 @@ Thumbs.db
 .idea
 .sublime*
 /atom-shell/
+*.code-workspace
 
 # misc
 package-lock.json
