@@ -23,6 +23,8 @@ class App extends Component {
     isError: false
   }
 
+  // **** USING A CALLBACK FUNCTION ****
+
   getLocation = (callback) => {
     this.setState({ loading: true });
     axios
@@ -32,26 +34,27 @@ class App extends Component {
           throw new Error("No response from lat * long");
         callback(response.data.lat, response.data.lon);
         this.setState({
-          location: response.data.location,
-          loading: false  
+          location: response.data.location
         });
       })
     .catch(() => {
-      this.setState({ isError: true });
+      console.log("No response from lat * long");
     });
   }
 
   getWeather = (lat, lon) => {
-    this.setState({ loading: true });
     axios
       .get(`http://dev.mydbc.co/demo/api.php?lat=${lat}&long=${lon}`)
       .then(response => {
+        if (!response.data.currently)
+          throw new Error("No response from weather api");
         this.setState({  
-          weather: response.data.currently
+          weather: response.data.currently,
+          loading: false  
         });
       })
-      .catch(() => {
-        this.setState({ isError: true });
+      .catch((err) => {
+        console.log(err);
       });
   }
 
@@ -59,12 +62,51 @@ class App extends Component {
     this.getLocation(this.getWeather);
   }
 
+  // **** ALTERNATE METHOD USING NESTED AXIOS REQUESTS ****
+
+  // getWeather = () => {
+  //   this.setState({ loading: true });
+  //   axios
+  //     .get('http://dev.mydbc.co/demo/latlong.php')
+  //     .then(response => {
+  //       if(!response.data.lat || !response.data.lon)
+  //         throw new Error("No response from lat * long");
+  //       this.setState({
+  //         location: response.data.location, 
+  //       });
+  //       const lat = response.data.lat, lon = response.data.lon;
+  //       axios
+  //         .get(`http://dev.mydbc.co/demo/api.php?lat=${lat}&longz=${lon}`)
+  //         .then(response => {
+  //           if(!response.data.currently)
+  //             throw new Error("No response from weather api");
+  //           this.setState({  
+  //             weather: response.data.currently,
+  //             loading: false
+  //           });
+  //         })
+  //         .catch((err) => {
+  //           this.setState({ isError: true });
+  //           console.log(err);
+  //         });
+  //     })
+  //   .catch((err) => {
+  //     this.setState({ isError: true });
+  //     console.log("No response from lat * long");
+  //   });
+  // }
+
+  // componentDidMount = () => {
+  //   this.getWeather();
+  // }
+
 
   render() {
     return (
       <div className="card">
         <div className="card-section">
-          {this.state.loading  
+        {console.log(this.state.isError)}
+          {this.state.loading 
             ? ( 
             <div className="container">
               <h2>Loading</h2>
