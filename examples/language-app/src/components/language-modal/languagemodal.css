@@ -1,0 +1,24 @@
+.language-container {
+  border: 1px solid #ddd;
+  width: 50%;
+  display: flex;
+}
+
+.language-container hr {
+  border: 1px solid !important;
+}
+
+.vertical {
+  border-left: 1px solid #ddd;
+  height: 200px;
+  padding: 5px;
+  margin: 0 auto;
+}
+
+.Japanese {
+  margin: 0 auto;
+}
+
+.English {
+  margin: 0 auto;
+}

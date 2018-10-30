@@ -8,26 +8,29 @@
  */
 
 import React from "react";
-import CustomeCategories from "./CustomeCategories/CustomeCategories";
-import Customes from "./Customes/Customes";
+import { Switch, Route } from "react-router-dom";
+import CostumeCategories from "./CostumeCategories/CostumeCategories";
+import Costumes from "./Costumes/Costumes";
 
 function App() {
   /**
    * Next, you will need to setup your routes here
    *
-   * - "/" should map to "CustomeCategories"
-   * - "/customes" should map to "CustomeCategories"
+   * - "/" should map to "CostumeCategories"
+   * - "/costumes" should map to "CostumeCategories"
    *
-   * - "/customes/women" should map to "Customes"
-   * - "/customes/men" should map to "Customes"
-   * - "/customes/girls" should map to "Customes"
-   * - "/customes/boys" should map to "Customes"
+   * - "/costume/women" should map to "Customes"
+   * - "/costume/men" should map to "Customes"
+   * - "/costume/girls" should map to "Customes"
+   * - "/costume/boys" should map to "Customes"
    */
   return (
     <div className="container">
-      {/* Both components should NOT display on the page at once. */}
-      <CustomeCategories />
-      <Customes />
+      <Switch>
+        <Route exact path="/" component={CostumeCategories} />
+        <Route exact path="/costume-categories" component={CostumeCategories} />
+        <Route exact path="/costumes/:category" component={Costumes} />
+      </Switch>
     </div>
   );
 }

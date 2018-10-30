@@ -1,3 +1,5 @@
+import React from 'react';
+
 /**
  * As a user, I should be able to click on a button named Increment to increment the count
  * As a user, I should be able to click on a button named Decrement to decrement the count

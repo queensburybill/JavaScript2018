@@ -1,0 +1,16 @@
+.navbar-container {
+  background-color: black;
+  color: white;
+  height: 50px;
+  margin-bottom: 50px;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font: white;
+  align-items: center;
+  height: 100%;
+}

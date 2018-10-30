@@ -6,24 +6,24 @@
  */
 
 import React from "react";
+import { Link } from "react-router-dom";
+import costumes from "../../data/costumes";
 
-import customes from "../../data/customes";
-
-function CustomeCategories() {
+function CostumeCategories() {
   return (
     <div className="mt-3">
-      <h1>Custome Categories</h1>
+      <h1>Costume Categories</h1>
       <div className="row mt-5">
-        {Object.entries(customes).map(([category, categoryInfo]) => {
+        {Object.entries(costumes).map(([category, categoryInfo]) => {
           const key = `category-${category}`;
-          const link = `/customes/${category}`;
+          const link = `/costumes/${category}`;
           return (
             <div className="col text-center" key={key}>
-              <a href={link}>
+              <Link to={link}>
                 <img src={categoryInfo.image} alt="" />
-              </a>
+              </Link>
               <h2 className="lead">
-                <a href={link}>{category.toUpperCase()}</a>
+                <Link to={link}>{category.toUpperCase()}</Link>
               </h2>
             </div>
           );
@@ -33,4 +33,4 @@ function CustomeCategories() {
   );
 }
 
-export default CustomeCategories;
+export default CostumeCategories;

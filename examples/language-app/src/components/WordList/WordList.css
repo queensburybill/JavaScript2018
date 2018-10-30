@@ -1,0 +1,12 @@
+.wordlistContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 87%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.item-enter {
+  opacity: 0.01;
+  transform: translateX(-200%);
+}
