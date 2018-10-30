@@ -1,4 +1,4 @@
-```import React from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import App from '../../App.js';
 import { expect } from 'chai';
@@ -46,4 +46,4 @@ describe('<DisplayList/>', () => {
   it.only('renders li items based off of props', () => {
     expect(displayListWrapper.find('li').text()).to.equal('Test');
   });
-});```
+});
