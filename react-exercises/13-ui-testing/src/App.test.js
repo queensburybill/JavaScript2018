@@ -10,9 +10,6 @@ import { shallow, mount } from 'enzyme';
 import { expect } from 'chai';
 import App from './App';
 
-// const wrapperS = shallow(<App />);
-// const wrapperM = mount(<App />);
-
 describe('Links Page', () => {
   it('renders a welcome message', () => {
     const wrapper = shallow(<App />);
@@ -49,7 +46,6 @@ describe('Links Page', () => {
     wrapper.setState({ userInput1: 'Google', userInput2: 'https://www.google.com/' });
     const addButton = wrapper.find('button').filterWhere(n => n.text() === 'Add a Link');
     const addButton2 = wrapper.findWhere(n => n.text() ==='Add a Link');
-    console.log(addButton2.debug());
     addButton.simulate('submit');
     expect(wrapper.find('li').at(2).text()).to.equal('Google');
   });
