@@ -15,37 +15,38 @@ class App extends Component {
       }
     ],
     isHiding: false,
-    userInput: ''
+    userInput1: '',
+    userInput2: ''
   };
-  addLink = () => {
-    const { links, userInput } = this.state;
-    let userCreatedLink = {
-      text: userInput,
-      href: 'https://airbnb.io/enzyme/docs/api/'
-    };
 
-    let newLink = [...links, userCreatedLink];
+  addLink = (e) => {
+    e.preventDefault();
+    const { links, userInput1, userInput2 } = this.state;
+    let userCreatedLink = {
+      text: userInput1,
+      href: userInput2
+    }
+
+    let newLinks = [...links, userCreatedLink];
 
     this.setState({
-      links: newLink
+      links: newLinks,
+      userInput1: '',
+      userInput2: ''
     });
-  };
-
-  removeLinks = () => {
-    //Enter code to remove links
-  };
+  }
 
   hideLinks = () => {
     this.setState({
       isHiding: !this.state.isHiding
     });
-  };
+  }
 
-  onChangeText = userInput => {
+  handleInputChange = (e, inputKey) => {
     this.setState({
-      userInput
+      [inputKey]: e.target.value
     });
-  };
+  }
 
   render() {
     const { links, isHiding } = this.state;
@@ -55,13 +56,22 @@ class App extends Component {
         <header className="App-header">
           <h2>Welcome Links Center</h2>
           {!isHiding && <Links links={links} />}
-
-          <input
-            type="text"
-            placeholder="Enter Link"
-            onChange={e => this.setState({ userInput: e.target.value })}
-          />
-          <button onClick={this.addLink}>Add a Link</button>
+          <form onSubmit={e => this.addLink(e)}>
+            <input
+              type="text"
+              placeholder="Enter Link"
+              value={this.state.userInput1}
+              onChange={e => this.handleInputChange(e, "userInput1")}
+            />
+            <input
+              type="text"
+              placeholder="Enter URL"
+              value={this.state.userInput2}
+              onChange={e => this.handleInputChange(e, "userInput2")}
+            />
+            <button type='submit'>Add a Link</button>
+          </form>
+          <br></br>
           <button onClick={this.hideLinks}>Hide Links</button>
         </header>
       </div>
