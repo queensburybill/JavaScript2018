@@ -6,12 +6,14 @@ import React from "react";
  */
 function ListItem(props) {
   return (
-    <li className="list-group-item">
+    <li className="list-group-item"
+    >
       {props.children}
       <button
         type="button"
         className="btn btn-link float-right"
         aria-label="Delete"
+        onClick={() => props.onDeleteButtonClick(props.index)}
       >
         x
       </button>
