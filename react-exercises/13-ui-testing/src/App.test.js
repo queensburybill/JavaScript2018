@@ -45,7 +45,6 @@ describe('Links Page', () => {
     const wrapper = mount(<App />);
     wrapper.setState({ userInput1: 'Google', userInput2: 'https://www.google.com/' });
     const addButton = wrapper.find('button').filterWhere(n => n.text() === 'Add a Link');
-    const addButton2 = wrapper.findWhere(n => n.text() ==='Add a Link');
     addButton.simulate('submit');
     expect(wrapper.find('li').at(2).text()).to.equal('Google');
   });
