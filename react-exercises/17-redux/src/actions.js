@@ -19,7 +19,7 @@ export function addTodo(userInput) {
   };
 }
 
-export function addTodo(todoIndex) {
+export function deleteTodo(todoIndex) {
   return {
     type: type.DELETE_TODO,
     todoIndex
@@ -29,6 +29,20 @@ export function addTodo(todoIndex) {
 export function selectColor(optionId) {
   return {
     type: type.SELECT_COLOR,
+    optionId
+  };
+}
+
+export function addColor(color) {
+  return {
+    type: type.ADD_COLOR,
+    color
+  };
+}
+
+export function deleteColor(optionId) {
+  return {
+    type: type.DELETE_COLOR,
     optionId
   };
 }

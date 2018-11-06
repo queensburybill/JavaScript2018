@@ -32,22 +32,30 @@ const reducer = (
         todos: [...state.todos, action.userInput]
       };
     case type.DELETE_TODO:
-    /**
-     * Complete this
-     */
+      return {
+        ...state,
+        todos: state.todos.filter((item, i) => i !== action.todoIndex )
+      }
     case type.SELECT_COLOR:
       return {
         ...state,
         selectedColor: state.colors[action.colorId]
       };
-    case type.ADD_COLOR:
-    /**
-     * Add a color and write a unit test for the color
-     */
-    case type.ADD_COLOR:
-    /**
-     * Delete a color and write a unit test for the color
-     */
+    case type.ADD_COLOR: 
+      const colorId = Object.keys(state.colors).length;
+      const colors = state.colors 
+      return {
+        ...state,
+        colors: {...colors, [colorId]: action.color }
+      }
+    case type.DELETE_COLOR: {
+      const colors = state.colors;
+      delete colors.action.optionId
+      return{
+        ...state,
+        colors 
+      }
+    }
     default:
       return state;
   }
