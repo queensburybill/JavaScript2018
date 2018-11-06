@@ -1,31 +1,48 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 import Links from './components/Links/Links';
 import './App.css';
+=======
+import React, { Component } from "react";
+import Links from "./components/Links/Links";
+import logo from "./logo.svg";
+import "./App.css";
+>>>>>>> b25a044af835b5dcd78c6655095b2e6942e0ab13
 
 class App extends Component {
   state = {
     links: [
       {
-        text: 'Running and Writing UI Tests Inside this Starter Kit',
-        href: 'https://facebook.github.io/create-react-app/docs/running-tests'
+        text: "Running and Writing UI Tests Inside this Starter Kit",
+        href: "https://facebook.github.io/create-react-app/docs/running-tests"
       },
       {
-        text: 'UI Testing with Enzyme',
-        href: 'https://airbnb.io/enzyme/docs/api/'
+        text: "UI Testing with Enzyme",
+        href: "https://airbnb.io/enzyme/docs/api/"
       }
     ],
     isHiding: false,
+<<<<<<< HEAD
     userInput1: '',
     userInput2: ''
+=======
+    userInput: ""
+>>>>>>> b25a044af835b5dcd78c6655095b2e6942e0ab13
   };
 
   addLink = (e) => {
     e.preventDefault();
     const { links, userInput1, userInput2 } = this.state;
     let userCreatedLink = {
+<<<<<<< HEAD
       text: userInput1,
       href: userInput2
     }
+=======
+      text: userInput,
+      href: "https://airbnb.io/enzyme/docs/api/"
+    };
+>>>>>>> b25a044af835b5dcd78c6655095b2e6942e0ab13
 
     let newLinks = [...links, userCreatedLink];
 

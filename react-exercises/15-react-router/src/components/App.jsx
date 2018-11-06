@@ -9,8 +9,13 @@
 
 import React from "react";
 import { Switch, Route } from "react-router-dom";
+<<<<<<< HEAD
 import CostumeCategories from "./CostumeCategories/CostumeCategories";
 import Costumes from "./Costumes/Costumes";
+=======
+import CustomeCategories from "./CustomeCategories/CustomeCategories";
+import Customes from "./Customes/Customes";
+>>>>>>> b25a044af835b5dcd78c6655095b2e6942e0ab13
 
 function App() {
   /**
@@ -26,10 +31,18 @@ function App() {
    */
   return (
     <div className="container">
+<<<<<<< HEAD
       <Switch>
         <Route exact path="/" component={CostumeCategories} />
         <Route exact path="/costume-categories" component={CostumeCategories} />
         <Route exact path="/costumes/:category" component={Costumes} />
+=======
+      {/* Both components should NOT display on the page at once. */}
+      <Switch>
+        <Route exact path="/" component={CustomeCategories} />
+        <Route exact path="/customes" component={CustomeCategories} />
+        <Route path="/customes/:category" component={Customes} />
+>>>>>>> b25a044af835b5dcd78c6655095b2e6942e0ab13
       </Switch>
     </div>
   );

@@ -1,5 +1,6 @@
 /**
- * Replace <a> tags with React Router's <Link> component. This will stop the page from refreshing
+ * Replace <a> tags with React Router's <Link> component. This will import { link } from "fs";
+stop the page from refreshing
  * when the user will click on the link. You will need to import something from React Router.
  *
  * You can use the file "examples/14-react-router/src/components/NowPlaying/NowPlaying.jsx" as an example
