@@ -67,6 +67,8 @@ Thumbs.db
 .project
 .vscode/*
 !/.vscode/launch.json
+**/.vscode/*
+!**/.vscode/launch.json
 *.code*
 .idea
 .sublime*
