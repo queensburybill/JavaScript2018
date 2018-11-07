@@ -41,17 +41,19 @@ const reducer = (
         ...state,
         selectedColor: state.colors[action.colorId]
       };
-    case type.ADD_COLOR: 
-      const colorId = Object.keys(state.colors).length;
+    case type.ADD_COLOR: {
       const colors = state.colors 
+      const keys = Object.keys(colors);
+      const colorId = keys.reduce((a, b) => Math.max(a, b)) + 1;
       return {
         ...state,
         colors: {...colors, [colorId]: action.color }
       }
+    }
     case type.DELETE_COLOR: {
       const colors = state.colors;
-      delete colors.action.optionId
-      return{
+      delete colors[action.optionId];
+      return {
         ...state,
         colors 
       }
