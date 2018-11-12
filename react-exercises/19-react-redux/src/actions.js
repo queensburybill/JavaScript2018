@@ -1,27 +1,33 @@
-import * as type from "./constants/actionTypes";
+import * as types from "./constants/actionTypes";
+
+export function rollDice() {
+  return {
+    type: types.ROLL_DICE
+  };
+}
 
 export function increment() {
   return {
-    type: type.INCREMENT
+    type: types.INCREMENT
   };
 }
 
 export function decrement() {
   return {
-    type: type.DECREMENT
+    type: types.DECREMENT
   };
 }
 
 export function addTodo(userInput) {
   return {
-    type: type.ADD_TODO,
+    type: types.ADD_TODO,
     userInput
   };
 }
 
 export function deleteTodo(todoIndex) {
   return {
-    type: type.DELETE_TODO,
+    type: types.DELETE_TODO,
     todoIndex
   };
 }

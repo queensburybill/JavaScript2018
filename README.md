@@ -9,7 +9,7 @@ This is the git repository for the class. It will be updated on a class by class
 You will submit your assignments by doing pull requests. You will need to create a github account if do not have one already. In order to do pull requests, you will need to fork this repository. Click on the _Fork_ button. You will clone your forked repository with this command, replacing YOUR-USERNAME with your username:
 
 ```shell
-git clone https://github.com/github.com:YOUR-USERNAME/JavaScript2018.git
+git clone https://github.com/YOUR-USERNAME/JavaScript2018.git
 ```
 
 Add the original repository as a remote to your forked repository:
@@ -30,7 +30,7 @@ Whenever you are ready to submit your work, commit your changes and push to the 
 git push origin master
 ```
 
-Follow the guide [Creating a pull request from a fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) to make the pull request. The "original repository you created your fork from" that the guide refers to in Step 1 is this repository.
+Follow the guide [Creating a pull request from a fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) to make the pull request. The "original repository you created your fork from" that the guide refers to in Step 1 is the AlbanyCanCodeCourses's repository.
 
 ## Resources:
 
@@ -39,3 +39,5 @@ Follow the guide [Creating a pull request from a fork](https://help.github.com/a
 [Slides](https://slides.com/jamaltaylor)
 
 [Project 1 - Retro Board](https://docs.google.com/document/d/1ZWnjgvoGg9cIdpnBzFFI4JUGt8ckydu1hCA3wjORirk/edit?usp=sharing)
+
+[Project 2 - Bookstore](https://docs.google.com/document/d/1FDfNGZ0p0mV_3hUNi_STAbbl4iKF6TkizgT4Ex9n3Kc/edit?usp=sharing)

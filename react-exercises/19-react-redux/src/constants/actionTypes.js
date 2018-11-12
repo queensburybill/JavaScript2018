@@ -1,3 +1,4 @@
+export const ROLL_DICE = "ROLL_DICE";
 export const INCREMENT = "INCREMENT";
 export const DECREMENT = "DECREMENT";
 export const ADD_TODO = "ADD_TODO";
