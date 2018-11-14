@@ -31,3 +31,16 @@ export function deleteTodo(todoIndex) {
     todoIndex
   };
 }
+
+// export function getUserInput() {
+//   return {
+//     type: types.GET_USER_INPUT
+//   };
+// }
+
+export function setUserInput(userInput) {
+  return {
+    type: types.SET_USER_INPUT,
+    userInput
+  };
+}

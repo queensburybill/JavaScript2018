@@ -11,7 +11,8 @@ const reducer = (
   state = {
     diceNumber: generateRandomDiceNumber(),
     count: 0,
-    todos: []
+    todos: [],
+    userInput: ""
   },
   action
 ) => {
@@ -34,7 +35,8 @@ const reducer = (
     case types.ADD_TODO:
       return {
         ...state,
-        todos: [...state.todos, action.userInput]
+        todos: [...state.todos, action.userInput],
+        userInput: ""
       };
     case types.DELETE_TODO:
       return {
@@ -42,6 +44,15 @@ const reducer = (
         todos: state.todos.filter((todo, index) => {
           return index !== action.todoIndex;
         })
+      };
+      // case types.GET_USER_INPUT:
+      //   return {
+      //     state.userInput
+      //   };
+    case types.SET_USER_INPUT:
+      return {
+        ...state,
+        userInput: action.userInput
       };
     default:
       return state;

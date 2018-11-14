@@ -6,3 +6,5 @@ export const DELETE_TODO = "DELETE_TODO";
 export const SELECT_COLOR = "SELECT_COLOR";
 export const ADD_COLOR = "ADD_COLOR";
 export const DELETE_COLOR = "DELETE_COLOR";
+// export const GET_USER_INPUT = "GET_USER_INPUT";
+export const SET_USER_INPUT = "SET_USER_INPUT";

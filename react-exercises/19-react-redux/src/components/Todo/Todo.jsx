@@ -10,40 +10,27 @@ import React, { Component } from "react";
 import ListItem from "./ListItem/ListItem";
 
 class Todo extends Component {
-  state = {
-    userInput: "",
-    todos: []
-  };
-  setUserInput = userInput => {
-    this.setState({ userInput: userInput });
-  };
-  /**
-   * This will be passed down from the container as props instead
-   * (but you still need to prevent the form from submitting and pass up user input)
-   */
+  // state = {
+  //   userInput: ""
+  // };
+  // setUserInput = userInput => {
+  //   this.props.setUserInput(userInput);
+  // };
+
   addTodo = e => {
     e.preventDefault();
-    this.setState({
-      todos: [...this.state.todos, this.state.userInput],
-      userInput: ""
-    });
+    this.props.addTodo(this.props.userInput);
   };
-  /**
-   * This will be passed down from the container as props instead
-   * (but you still need to pass up the todo index)
-   */
-  deleteTodo = todoIndex => {
-    this.setState({
-      todos: this.state.todos.filter((item, index) => {
-        return index !== todoIndex;
-      })
-    });
-  };
+
+  // getUserInput = () => {
+  //   this.props.getUserInput();
+  // }
+
   render() {
     return (
       <div className="mt-4">
         <h1 className="h3">Todo List</h1>
-        <form className="form-group" onSubmit={this.addTodo}>
+        <form className="form-group" onSubmit={e => this.addTodo(e)}>
           <div className="input-group mb-3">
             <input
               type="text"
@@ -51,13 +38,13 @@ class Todo extends Component {
               placeholder="Enter text"
               aria-label="Enter text"
               aria-describedby="button-add"
-              value={this.state.userInput}
-              onChange={e => this.setUserInput(e.target.value)}
+              value={this.props.userInput}
+              onChange={e => this.props.setUserInput(e.target.value)}
             />
             <div className="input-group-append">
               <button
                 className="btn btn-primary"
-                type="subimit"
+                type="submit"
                 id="button-add"
               >
                 Add
@@ -67,11 +54,11 @@ class Todo extends Component {
         </form>
         <ul className="list-group">
           {/* The todos will be passed down as props */}
-          {this.state.todos.map((text, index) => {
+          {this.props.todos.map((text, index) => {
             const key = `todo-item-${index}`;
             return (
               <ListItem
-                deleteTodo={this.deleteTodo}
+                deleteTodo={this.props.deleteTodo}
                 todoIndex={index}
                 key={key}
               >
