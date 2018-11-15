@@ -1,14 +1,31 @@
-/**
- * Import action types from "src/constants/actionTypes.js"
- */
+import * as types from "./constants/actionTypes";
 
-/**
- * Create and export an a function for each action
- * @example
- * export function addTodo(userInput) => {
- *   return {
- *     type: types.ADD_TODO,
- *     userInput: userInput
- *   }
- * };
- */
+export function login(id, pin) {
+    return {
+        type: types.LOGIN,
+        id: id,
+        pin: pin
+    };
+}
+
+export function submitVote(category, index) {
+    return {
+        type: types.SUBMIT_VOTE,
+        category: category,
+        index: index
+    };
+}
+
+export function postponeVote() {
+    return {
+        type: types.POSTPONE_VOTE
+    };
+}
+
+export function finishVoting(id) {
+    return {
+        type: types.FINISH_VOTING,
+        id: id
+    };
+}
+
