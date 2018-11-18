@@ -8,17 +8,17 @@ export function login(id, pin) {
     };
 }
 
-export function submitVote(category, index) {
+export function getNominees() {
     return {
-        type: types.SUBMIT_VOTE,
-        category: category,
-        index: index
+        type: types.GET_NOMINEES
     };
 }
 
-export function postponeVote() {
+export function submitVote(categoryNumber, index) {
     return {
-        type: types.POSTPONE_VOTE
+        type: types.SUBMIT_VOTE,
+        category: categoryNumber,
+        index: index
     };
 }
 

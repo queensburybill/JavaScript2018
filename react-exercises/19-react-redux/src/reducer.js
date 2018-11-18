@@ -45,10 +45,6 @@ const reducer = (
           return index !== action.todoIndex;
         })
       };
-      // case types.GET_USER_INPUT:
-      //   return {
-      //     state.userInput
-      //   };
     case types.SET_USER_INPUT:
       return {
         ...state,

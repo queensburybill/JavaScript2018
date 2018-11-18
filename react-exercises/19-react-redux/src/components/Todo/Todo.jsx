@@ -10,21 +10,11 @@ import React, { Component } from "react";
 import ListItem from "./ListItem/ListItem";
 
 class Todo extends Component {
-  // state = {
-  //   userInput: ""
-  // };
-  // setUserInput = userInput => {
-  //   this.props.setUserInput(userInput);
-  // };
 
   addTodo = e => {
     e.preventDefault();
     this.props.addTodo(this.props.userInput);
   };
-
-  // getUserInput = () => {
-  //   this.props.getUserInput();
-  // }
 
   render() {
     return (

@@ -4,6 +4,6 @@
  */
 
  export const LOGIN = 'LOGIN';
+ export const GET_NOMINEES = 'GET_NOMINEES';
  export const SUBMIT_VOTE = 'SUBMIT_VOTE';
- export const POSTPONE_VOTE = 'POSTPONE_VOTE';
  export const FINISH_VOTING = 'FINISH_VOTING';

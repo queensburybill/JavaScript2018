@@ -5,25 +5,12 @@ import categories from "./constants/categories";
 const reducer = (
   state = {
     id: "",
-    pin: null,
-    selections: [],
-    categories: {
-      "1": {
-        category: "Entertainer of the Year", 
-        nominees: []
-      },
-      "2": {
-        category: "Album of the Year", 
-        nominees: []
-      },
-      "3": {
-        category: "Female Vocalist of the Year", 
-        nominees: []
-      },
-      "4": {
-        category: "Male Vocalist of the Year", 
-        nominees: []
-      }
+    categories: {},
+    selections: {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": ""
     }
   },
   action
@@ -32,14 +19,26 @@ const reducer = (
     case types.LOGIN:
       return {
         ...state,
-        id: action.id,
-        pin: action.pin
+        id: action.id
+      };
+    case types.GET_NOMINEES:
+      return {
+        ...state,
+        categories: action.getNominees()
       };
     case types.SUBMIT_VOTE:
       return {
         ...state,
-        selections: 
-      }
+        selections: { 
+          ...state.selections,
+          [action.categoryNumber]: state.categories.categoryNumber.nominees[action.index] 
+        }
+      };
+      case types.FINISH_VOTING:
+        return {
+          ...state,
+          id: action.finishVoting()
+        };
     default:
       return state;
   }
