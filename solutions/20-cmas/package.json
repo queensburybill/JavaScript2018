@@ -6,8 +6,11 @@
     "redux": "^4.0.1"
   },
   "scripts": {
-    "test": "mocha --require @babel/register",
-    "testAll": "mocha --require @babel/register ./test/**/*-test.js"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "testAll": "mocha --require @babel/register ./test/**/*-test.js",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

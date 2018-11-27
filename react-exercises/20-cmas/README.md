@@ -19,7 +19,7 @@ This will not be a part of today's assignment, but we will be adding the followi
 
 - A login call. This will need a member ID and pin number.
 - An AJAX call to get the nominees. An example of how you can expect the data. An example of the expected response is _src/constants/categories.json_.
-- An AJAX call to send a vote. To make this call, you will need to send the category number and the array index of the nominee. See _src/constants/categories.json_.
+- An AJAX call to send a vote. To make this call, you will need to send the category number, the array index of the nominee, the member ID. See _src/constants/categories.json_.
 - A call to complete the vote. This will need the member ID.
 
 ### Steps
