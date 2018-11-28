@@ -4,14 +4,11 @@
 
 import * as types from "./constants/actionTypes";
 
-import categories from "./constants/categories";
-
 const reducer = (
   state = {
     /* Define default state here */
     memberId: null,
-    votes: {},
-    categories: {}
+    votes: {}
   },
   action
 ) => {
@@ -43,7 +40,7 @@ const reducer = (
     case types.COMPLETE_VOTING:
       return {
         ...state,
-        isCompleted: true
+        isComplete: true
       };
     default:
       return state;
