@@ -8,6 +8,7 @@
  */
 
 import React from "react";
+import { Switch, Route } from "react-router-dom";
 import CustomeCategories from "./CustomeCategories/CustomeCategories";
 import Customes from "./Customes/Customes";
 
@@ -26,8 +27,11 @@ function App() {
   return (
     <div className="container">
       {/* Both components should NOT display on the page at once. */}
-      <CustomeCategories />
-      <Customes />
+      <Switch>
+        <Route exact path="/" component={CustomeCategories} />
+        <Route exact path="/customes" component={CustomeCategories} />
+        <Route path="/customes/:category" component={Customes} />
+      </Switch>
     </div>
   );
 }

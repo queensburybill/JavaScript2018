@@ -22,12 +22,12 @@ In your terminal or command line:
 
 ```shell
 git pull upstream master
-d react-exercises/15-react-router/
+cd react-exercises/15-react-router/
 yarn install
 yarn start
 ```
 
-You will need to edit each one of these files in the order in this exact order:
+You will need to edit each one of these in this exact order:
 
 - src/index.js
 - src/components/App.jsx

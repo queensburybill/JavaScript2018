@@ -1,5 +1,6 @@
 /**
- * Replace <a> tags with React Router's <Link> component. This will stop the page from refreshing
+ * Replace <a> tags with React Router's <Link> component. This will import { link } from "fs";
+stop the page from refreshing
  * when the user will click on the link. You will need to import something from React Router.
  *
  * You can use the file "examples/14-react-router/src/components/NowPlaying/NowPlaying.jsx" as an example
@@ -7,6 +8,7 @@
 
 import React from "react";
 
+import { Link } from "react-router-dom";
 import customes from "../../data/customes";
 
 function CustomeCategories() {
@@ -19,11 +21,11 @@ function CustomeCategories() {
           const link = `/customes/${category}`;
           return (
             <div className="col text-center" key={key}>
-              <a href={link}>
+              <Link to={link}>
                 <img src={categoryInfo.image} alt="" />
-              </a>
+              </Link>
               <h2 className="lead">
-                <a href={link}>{category.toUpperCase()}</a>
+                <Link to={link}>{category.toUpperCase()}</Link>
               </h2>
             </div>
           );

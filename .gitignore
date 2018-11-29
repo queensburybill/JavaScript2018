@@ -67,6 +67,8 @@ Thumbs.db
 .project
 .vscode/*
 !/.vscode/launch.json
+**/.vscode/*
+!**/.vscode/launch.json
 *.code*
 .idea
 .sublime*
@@ -75,3 +77,4 @@ Thumbs.db
 # misc
 package-lock.json
 yarn.lock
+NOTES.md

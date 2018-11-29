@@ -1,28 +1,28 @@
-import React, { Component } from 'react';
-import Links from './components/Links/Links';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Links from "./components/Links/Links";
+import logo from "./logo.svg";
+import "./App.css";
 
 class App extends Component {
   state = {
     links: [
       {
-        text: 'Running and Writing UI Tests Inside this Starter Kit',
-        href: 'https://facebook.github.io/create-react-app/docs/running-tests'
+        text: "Running and Writing UI Tests Inside this Starter Kit",
+        href: "https://facebook.github.io/create-react-app/docs/running-tests"
       },
       {
-        text: 'UI Testing with Enzyme',
-        href: 'https://airbnb.io/enzyme/docs/api/'
+        text: "UI Testing with Enzyme",
+        href: "https://airbnb.io/enzyme/docs/api/"
       }
     ],
     isHiding: false,
-    userInput: ''
+    userInput: ""
   };
   addLink = () => {
     const { links, userInput } = this.state;
     let userCreatedLink = {
       text: userInput,
-      href: 'https://airbnb.io/enzyme/docs/api/'
+      href: "https://airbnb.io/enzyme/docs/api/"
     };
 
     let newLink = [...links, userCreatedLink];
