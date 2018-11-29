@@ -33,14 +33,14 @@ const reducer = (
     }
     */
     case types.FETCH_ALL_NOMINEES_PENDING:
-      // case types.VOTE_PENDING: // Uncomment me
+    case types.VOTE_PENDING:
       return {
         ...state,
         isLoading: true,
         hasError: false
       };
     case types.FETCH_ALL_NOMINEES_REJECTED:
-      // case types.VOTE_REJECTED: // Uncomment me
+    case types.VOTE_REJECTED:
       return {
         ...state,
         isLoading: false,
