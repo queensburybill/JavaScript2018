@@ -1,0 +1,8 @@
+.costume-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
