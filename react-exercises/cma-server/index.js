@@ -88,10 +88,10 @@ const methodNotAllowed = (req, res) => {
 
 app.all("/", (req, res) => {
   const text = `<!DOCTYPE html><html><head></head><body><h1>Its running!</h1><table><thead><th>Method</th><th>URL</th><th>Example Request</th><th>Requires Authorization Header*</th></thead><tbody>
-    <tr><td>POST</td><td>http://localhost:7000/signin</td><td><code>{"memberId": "asdf", "pinNumber": "1234"}</code></td><td>&dash;</td></tr>
-    <tr><td>GET</td><td>http://localhost:7000/nominees</td><td></td><td>&dash;</td></tr>
-    <tr><td>POST</td><td>http://localhost:7000/vote</td><td><code>{"categoryId": "1", "nomineeIndex": 0}</code></td><td>&check;</td></tr>
-    <tr><td>POST</td><td>http://localhost:7000/complete</td><td></td><td>&check;</td></tr>
+    <tr><td>POST</td><td>http://localhost:7001/signin</td><td><code>{"memberId": "asdf", "pinNumber": "1234"}</code></td><td>&dash;</td></tr>
+    <tr><td>GET</td><td>http://localhost:7001/nominees</td><td></td><td>&dash;</td></tr>
+    <tr><td>POST</td><td>http://localhost:7001/vote</td><td><code>{"categoryId": "1", "nomineeIndex": 0}</code></td><td>&check;</td></tr>
+    <tr><td>POST</td><td>http://localhost:7001/complete</td><td></td><td>&check;</td></tr>
     </tbody></table><p><small>* Example authorization header would be<br><code>Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhc2RmIiwiaWF0IjoxNTQzMTE1MTY1fQ.c2svAxNJrl2PxjRH-e6o6sBOOHCzTQWQb2bwZipWx8w</code></small></p></body></html>`;
   res.send(text);
 });
@@ -150,7 +150,7 @@ app.post("/complete", (req, res) => {
 });
 app.all("/complete", methodNotAllowed);
 
-const server = app.listen(7000, () => {
+const server = app.listen(7001, () => {
   console.log(
     `\nYour server is running on http://localhost:${server.address().port}/`
   );
