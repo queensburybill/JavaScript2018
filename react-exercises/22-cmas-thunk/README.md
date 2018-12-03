@@ -19,12 +19,12 @@ Here is the summary of the AJAX requests (so far):
 
 | Method | URL                            | Example Request                        |
 | ------ | ------------------------------ | -------------------------------------- |
-| GET    | http://localhost:7000/nominees |                                        |
-| POST   | http://localhost:7000/vote     | {"categoryId": "1", "nomineeIndex": 0} |
+| GET    | http://localhost:7001/nominees |                                        |
+| POST   | http://localhost:7001/vote     | {"categoryId": "1", "nomineeIndex": 0} |
 
-The `http://localhost:7000/nominees` AJAX request, which gets a list of categories and nominees, was demostrated in class.
+The `http://localhost:7001/nominees` AJAX request, which gets a list of categories and nominees, was demostrated in class.
 
-The `http://localhost:7000/vote` AJAX request is cast when a user votes for a country artist or album. For this assignment, you will be working on integrating this request into Redux.
+The `http://localhost:7001/vote` AJAX request is cast when a user votes for a country artist or album. For this assignment, you will be working on integrating this request into Redux.
 
 ## Server
 
