@@ -9,17 +9,24 @@ function CompleteVoting(props) {
     <MainLayout className="text-center">
       <div>No more categories left.</div>
       <div>
-        {/* Add onClick event here */}
-        <button type="button" className="btn btn-link btn-lg">
+        <button
+          type="button"
+          className="btn btn-link btn-lg"
+          onClick={this.props.completeVoting}
+        >
           Complete and send my votes to the CMAs
         </button>
       </div>
-      {/* Add loading here */}
-      {/* If server failure, display "This is embarassing. We were unable to save your votes. Please try again later." error message */}
-      {/**
-       * When loading is successful, you will need to display this:
-       * @example <p>We received your votes. Thank you for voting!</p>
-       */}
+      {this.props.isLoading ? (
+        <Loading />
+      ) : this.props.hasError ? (
+        <ErrorMessage>
+          This is embarassing. We were unable to save your votes. Please try
+          again later.
+        </ErrorMessage>
+      ) : (
+        <p>We received your votes. Thank you for voting!</p>
+      )}
     </MainLayout>
   );
 }

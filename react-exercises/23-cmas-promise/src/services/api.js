@@ -27,6 +27,8 @@ export const voteRequest = (categoryId, nomineeIndex) => {
   return send(`${api}/vote`, { categoryId, nomineeIndex });
 };
 
-/**
- * Create a function that will send an AJAX request to "http://localhost:7001/complete"
- */
+export const completeVoting = () => {
+  return send(`${api}/complete`).then(response => {
+    return response;
+  });
+};

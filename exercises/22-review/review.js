@@ -7,7 +7,9 @@
  *   onlyOddNumbersValues([1,2,3]) // [1,3]
  *   onlyOddNumbersValues([5,1,2,3,10]) // [5,1,3]
  */
-function onlyOddNumbersValues(arr) {}
+function onlyOddNumbersValues(arr) {
+  return arr.filter(n => n % 2 !== 0);
+}
 
 /**
  * A function that accepts an array and returns the largest number inside the array
@@ -16,14 +18,18 @@ function onlyOddNumbersValues(arr) {}
  * @return {integar}
  */
 
-function largestNumberInArray(array) {}
+function largestNumberInArray(array) {
+  return array.reduce((total, n) => Math.max(total, n));
+}
 
 /**
  * Multiplies each value in an array by two
  * @param {array} arr
  * @returns {array} new array, with each value doubled
  */
-function doubleValues(arr) {}
+function doubleValues(arr) {
+  return array.map(n => n * 2);
+}
 
 /**
  * Find the character that is most commonly used in the string
@@ -33,7 +39,18 @@ function doubleValues(arr) {}
  * maxChar("aaaabc"); // a
  */
 
-function maxChars(string) {}
+function maxChars(string) {
+  let list = {};
+  string
+    .split("")
+    .forEach(char =>
+      list.hasOwnProperty(char) ? list[char]++ : (list[char] = 1)
+    );
+  let finalEntry = Object.entries(list).reduce((total, entry) =>
+    entry[1] > total[1] ? entry : total
+  );
+  return finalEntry[0];
+}
 
 /**
  * Given an array of numbers, return the sum

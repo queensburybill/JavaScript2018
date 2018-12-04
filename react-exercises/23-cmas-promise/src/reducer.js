@@ -45,9 +45,7 @@ const reducer = (
         hasError: false
       };
     }
-    /**
-     * Uncomment me
-     *
+
     case types.COMPLETE_VOTING_FULFILLED:
       return {
         ...state,
@@ -55,11 +53,11 @@ const reducer = (
         isLoading: false,
         hasError: false
       };
-    */
+
     case types.SIGNIN_PENDING:
     case types.FETCH_ALL_NOMINEES_PENDING:
     case types.VOTE_PENDING:
-      // case types.COMPLETE_VOTING_PENDING: Uncomment me
+    case types.COMPLETE_VOTING_PENDING:
       return {
         ...state,
         isLoading: true,
@@ -69,7 +67,7 @@ const reducer = (
     case types.SIGNIN_REJECTED:
     case types.FETCH_ALL_NOMINEES_REJECTED:
     case types.VOTE_REJECTED:
-      // case types.COMPLETE_VOTING_REJECTED: Uncomment me
+    case types.COMPLETE_VOTING_REJECTED:
       return {
         ...state,
         isLoading: false,
