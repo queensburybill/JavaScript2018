@@ -12,14 +12,14 @@ function CompleteVoting(props) {
         <button
           type="button"
           className="btn btn-link btn-lg"
-          onClick={this.props.completeVoting}
+          onClick={props.completeVoting}
         >
           Complete and send my votes to the CMAs
         </button>
       </div>
-      {this.props.isLoading ? (
+      {props.isLoading ? (
         <Loading />
-      ) : this.props.hasError ? (
+      ) : props.hasError ? (
         <ErrorMessage>
           This is embarassing. We were unable to save your votes. Please try
           again later.

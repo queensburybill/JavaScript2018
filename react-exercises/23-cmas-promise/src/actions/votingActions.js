@@ -1,9 +1,5 @@
 import * as types from "../constants/actionTypes";
-
-/**
- * Importing the function you just created from "src/services/api.js" here
- */
-import { voteRequest } from "../services/api";
+import { voteRequest, completeVotingRequest } from "../services/api";
 
 const ajaxLoading = () => {
   return {
@@ -34,8 +30,9 @@ export const vote = (categoryId, nomineeIndex) => {
   };
 };
 
-/**
- * Using redux promise only, complete the function below.
- * You can look at "src/ations/signinActions.js" as an example
- */
-export const completeVoting = () => {};
+export const completeVoting = () => {
+  return {
+    type: types.COMPLETE_VOTING,
+    payload: completeVotingRequest()
+  }
+};

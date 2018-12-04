@@ -28,7 +28,7 @@ function largestNumberInArray(array) {
  * @returns {array} new array, with each value doubled
  */
 function doubleValues(arr) {
-  return array.map(n => n * 2);
+  return arr.map(n => n * 2);
 }
 
 /**
@@ -40,16 +40,13 @@ function doubleValues(arr) {
  */
 
 function maxChars(string) {
-  let list = {};
-  string
-    .split("")
-    .forEach(char =>
-      list.hasOwnProperty(char) ? list[char]++ : (list[char] = 1)
-    );
-  let finalEntry = Object.entries(list).reduce((total, entry) =>
-    entry[1] > total[1] ? entry : total
-  );
-  return finalEntry[0];
+  let result = string[0];
+  string.split("").reduce((list, char) => {
+    list[char] ? list[char]++ : (list[char] = 1);
+    list[char] > list[result] && (result = char);
+    return list;
+  }, {});
+  return result;
 }
 
 /**
@@ -60,7 +57,9 @@ function maxChars(string) {
  *  addItems([1,5,6]) // 12
  *  addItems([1,-2,-3]) // -4
  */
-function addItems(arr) {}
+function addItems(arr) {
+  return arr.reduce((sum, n) => sum + n);
+}
 
 module.exports = {
   maxChars,
