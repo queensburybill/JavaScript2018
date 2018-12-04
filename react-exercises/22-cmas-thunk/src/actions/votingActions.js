@@ -23,6 +23,7 @@ const ajaxFailure = () => {
 };
 
 export const vote = (categoryId, nomineeIndex) => {
+  console.log(categoryId, nomineeIndex);
   return dispatch => {
     /**
      * Using "src/actions/fetchAllNomineesActions.js" as an example, do the following:
@@ -34,10 +35,8 @@ export const vote = (categoryId, nomineeIndex) => {
      * - dispatch the ajax request failure action when an error is caught
      */
     dispatch(ajaxLoading());
-    voteRequest().then(response =>
-      dispatch(
-        ajaxSuccess(response.data.categoryId, response.data.nomineeIndex)
-      )
-    );
+    voteRequest(categoryId, nomineeIndex)
+      .then(() => dispatch(ajaxSuccess(categoryId, nomineeIndex)))
+      .catch(() => dispatch(ajaxFailure()));
   };
 };

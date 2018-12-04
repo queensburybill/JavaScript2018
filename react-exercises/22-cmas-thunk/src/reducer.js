@@ -17,9 +17,6 @@ const reducer = (
         hasError: false
       };
     }
-    /**
-     * Uncomment the case below
-     *
     case types.VOTE_FULFILLED: {
       return {
         ...state,
@@ -31,7 +28,6 @@ const reducer = (
         hasError: false
       };
     }
-    */
     case types.FETCH_ALL_NOMINEES_PENDING:
     case types.VOTE_PENDING:
       return {

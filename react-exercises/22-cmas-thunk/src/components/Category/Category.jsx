@@ -35,7 +35,7 @@ class Category extends Component {
                 <Nominee
                   key={key}
                   nominee={nominee}
-                  onClick={/* Replace null with function */ null}
+                  onClick={() => this.props.vote(categoryId, index)}
                   isSelected={isSelected}
                 />
               );
@@ -52,7 +52,12 @@ class Category extends Component {
             {/**
              * If there is an AJAX failure with voting, display the error message
              * "This is embarassing. We were unable to save your vote. Please try again later."
-             */}
+             */
+            this.props.hasError && 
+              <ErrorMessage>
+                This is embarassing. We were unable to save your vote. Please try again later.
+              </ErrorMessage>
+            }
           </div>
         </MainLayout>
       );
@@ -64,7 +69,13 @@ class Category extends Component {
            * - Loading if it is loading
            * - Error component if there is a server failure. The error message should be:
            * "This is embarassing. We were unable to save your vote. Please try again later."
-           */}
+           */
+          this.props.isLoading ? <Loading /> 
+          : this.props.hasError && 
+            <ErrorMessage>
+              This is embarassing. We were unable to save your vote. Please try again later.
+            </ErrorMessage>
+          }
         </MainLayout>
       );
     }
