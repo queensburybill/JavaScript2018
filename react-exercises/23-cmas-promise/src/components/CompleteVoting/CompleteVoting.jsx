@@ -16,17 +16,17 @@ function CompleteVoting(props) {
         >
           Complete and send my votes to the CMAs
         </button>
+        {props.isLoading ? (
+          <Loading />
+        ) : props.hasError ? (
+          <ErrorMessage>
+            This is embarassing. We were unable to save your votes. Please try
+            again later.
+          </ErrorMessage>
+        ) : (
+          <p>We received your votes. Thank you for voting!</p>
+        )}
       </div>
-      {props.isLoading ? (
-        <Loading />
-      ) : props.hasError ? (
-        <ErrorMessage>
-          This is embarassing. We were unable to save your votes. Please try
-          again later.
-        </ErrorMessage>
-      ) : (
-        <p>We received your votes. Thank you for voting!</p>
-      )}
     </MainLayout>
   );
 }

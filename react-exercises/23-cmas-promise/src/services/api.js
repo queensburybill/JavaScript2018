@@ -28,7 +28,5 @@ export const voteRequest = (categoryId, nomineeIndex) => {
 };
 
 export const completeVotingRequest = () => {
-  return send(`${api}/complete`).then(response => {
-    return response;
-  });
+  return send(`${api}/complete`);
 };
