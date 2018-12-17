@@ -1,4 +1,4 @@
-import * as types from '../../actions/types';
+import * as types from "../../actions/types";
 
 const initialState = {
   bankBalance: {}
@@ -10,6 +10,17 @@ export default function reducer(state = initialState, action) {
       return { ...state, bankBalance: action.payload };
     }
     case types.DEPOSIT_MONEY: {
+      /**
+       * {
+       *   bankBalance: 1050
+       * }
+       *
+       * {
+       *   BankAccount: {
+       *     bankBalance: 1050
+       *   }
+       * }
+       */
       return {
         ...state,
         bankBalance: parseInt(state.bankBalance) + parseInt(action.payload)
