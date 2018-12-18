@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Libre+Franklin:400,500");
+@import url("https://cdn.jsdelivr.net/npm/foundation-sites@6.5.0/dist/css/foundation.min.css");
+@import url("https://use.fontawesome.com/releases/v5.5.0/css/all.css");
+
+body {
+  font-family: "Libre Baskerville", serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 500;
+}
+h1,
+.h1 {
+  font-size: 2.027rem;
+}
+h2,
+.h2 {
+  font-size: 1.802rem;
+}
+h3,
+.h3 {
+  font-size: 1.602rem;
+}
+h4,
+.h4 {
+  font-size: 1.424rem;
+}
+h5,
+.h5 {
+  font-size: 1.266rem;
+}
+h6,
+.h6 {
+  font-size: 1.125rem;
+}
+.title {
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: hsl(186, 51%, 43%);
+}
+a:hover,
+a:active,
+a:focus {
+  color: hsl(186, 57%, 52%);
+}
+
+input[type="search"],
+select {
+  font-family: "Libre Franklin", sans-serif;
+}
